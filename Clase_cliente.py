@@ -4,7 +4,7 @@
 import re
 import logging
 from config_logging import configurar_logging
-from FASE_4_excepciones import DatoInvalidoError
+from FASE_4 import DatoInvalidoError
 
 # Inicializar sistema de logs
 configurar_logging()
