@@ -17,8 +17,8 @@ from FASE_4 import (
     SoftwareFJError,
     DatoInvalidoError,
     ServicioNoDisponibleError,
-    Servicio,
 )
+from servicios import Servicio
 from Clase_cliente import Cliente
 from calculo_costos import CalculadoraCostos
 
@@ -496,7 +496,7 @@ class Reserva:
 # ════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    from FASE_4 import ReservaSala, AlquilerEquipo
+    from servicios import ReservaSala, AlquilerEquipo
 
     print("=" * 65)
     print("  SISTEMA DE RESERVAS — Software FJ")
