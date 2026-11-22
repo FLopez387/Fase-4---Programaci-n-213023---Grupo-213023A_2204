@@ -269,6 +269,10 @@ def crear_servicio(tipo: str, **datos) -> Servicio:
     tipos = {"sala": ReservaSala, "equipo": AlquilerEquipo, "asesoria": AsesoriaEspecializada}
     try:
         return tipos[tipo](**datos)
+    # Encadenamiento de excepciones: "raise ... from error" convierte el
+    # error de bajo nivel (KeyError o TypeError) en DatoInvalidoError,
+    # pero conserva la causa original en el atributo __cause__.
+
     except KeyError as error:
         logger.error("Tipo de servicio desconocido: %s", tipo)
         raise DatoInvalidoError(f"Tipo de servicio desconocido: '{tipo}'.") from error
