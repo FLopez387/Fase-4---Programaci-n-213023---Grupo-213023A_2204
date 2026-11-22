@@ -144,6 +144,10 @@ class ReservaSala(Servicio):
         return self._horas
 
     def validar_parametros(self) -> None:
+        # Valida primero las reglas comunes de Servicio (super) y luego
+        # la capacidad (entero entre 1 y 200) y las horas (entero entre 1 y 12).
+        # Si algún valor es inválido lanza ParametroServicioInvalidoError.
+        
         super().validar_parametros()  # reglas comunes
         if isinstance(self._capacidad, bool) or not isinstance(self._capacidad, int) \
                 or not 1 <= self._capacidad <= 200:
