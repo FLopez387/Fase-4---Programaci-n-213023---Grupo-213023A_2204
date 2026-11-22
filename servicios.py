@@ -207,6 +207,9 @@ class AlquilerEquipo(Servicio):
 class AsesoriaEspecializada(Servicio):
     """Asesoría con un especialista. La tarifa depende del nivel."""
 
+    # Niveles válidos: junior (x1.0), senior (x1.5) y experto (x2.0).
+    # Cualquier otro nivel hace que validar_parametros lance
+    # ParametroServicioInvalidoError.
     # Multiplicador de tarifa según el nivel del asesor
     NIVELES = {"junior": 1.0, "senior": 1.5, "experto": 2.0}
 
